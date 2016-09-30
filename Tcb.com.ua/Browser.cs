@@ -13,6 +13,7 @@ namespace Tcb.com.ua
         public static void Start()
         {
             Driver = StartWebDriver();
+            Driver.Manage().Window.Maximize();
         }
 
         private static IWebDriver StartWebDriver()
@@ -23,6 +24,10 @@ namespace Tcb.com.ua
             {
                 Driver = StartChrome();
             }
+            Driver.Manage().Window.Maximize();
+            Driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            Driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(40));
             return Driver;
         }
 
