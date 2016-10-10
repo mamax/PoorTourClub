@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace Tcb.com.ua.PageObjects
@@ -18,14 +13,15 @@ namespace Tcb.com.ua.PageObjects
 
         #region Methods
 
-        public void Open()
+        public override void Open()
         {
             Driver.Navigate().GoToUrl("https://tcb.com.ua/");
         }
 
-        public void Login()
+        public LoginPage Login()
         {
             Link_Login.Click();
+            return new LoginPage(Driver);
         }
 
         #endregion
@@ -38,4 +34,5 @@ namespace Tcb.com.ua.PageObjects
         #endregion
 
     }
+
 }
