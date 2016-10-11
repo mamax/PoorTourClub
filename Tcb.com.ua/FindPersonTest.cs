@@ -7,7 +7,7 @@ namespace Tcb.com.ua
     public class FindPersonTest : BaseTest
     {
         private UserData fbAccount = new UserData("maksim.mazurkevych@gmail.com", "gtnhjdbx2014");
-        private const String name = "Дудник Оксана";
+        public const String name = "Глушко Олександр";
 
         [Test]
         public void TestFindPerson()

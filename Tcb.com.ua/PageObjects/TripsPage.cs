@@ -16,8 +16,8 @@ namespace Tcb.com.ua.PageObjects
             Driver = driver;
         }
 
-        static string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        string newDirectory = currentDirectory.Replace("bin\\Debug", "ScreenShots\\");
+        public static string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string newDirectory = currentDirectory.Replace("bin\\Debug", "ScreenShots\\");
 
         public FirstStepPage FindPerson(string name)
         {
