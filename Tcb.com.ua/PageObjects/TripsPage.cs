@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -13,6 +15,9 @@ namespace Tcb.com.ua.PageObjects
         {
             Driver = driver;
         }
+
+        static string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        string newDirectory = currentDirectory.Replace("bin\\Debug", "ScreenShots\\");
 
         public FirstStepPage FindPerson(string name)
         {
@@ -36,7 +41,7 @@ namespace Tcb.com.ua.PageObjects
                         foreach (var cell in CellList)
                             if (cell.GetAttribute("title").Contains(name))
                             {
-                                SaveScreenshot("C:\\temp\\" + name + ".jpeg");
+                                SaveScreenshot(newDirectory + name + ".jpeg");
                                 Console.WriteLine(element.Text);
                                 isFound = true;
                                 break;
