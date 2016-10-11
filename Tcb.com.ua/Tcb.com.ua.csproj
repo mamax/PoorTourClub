@@ -70,6 +70,7 @@
     <Compile Include="UserData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="code.bat" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\Tcb.com.ua.csprojResolveAssemblyReference.cache" />
     <None Include="packages.config" />
@@ -101,6 +102,9 @@
     <Folder Include="ScreenShots\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>call $(ProjectDir)code.bat</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
