@@ -1,4 +1,4 @@
-﻿cmd
+﻿cmd.exe
 cd ..
 cd ..
 cd ScreenShots
